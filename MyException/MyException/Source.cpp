@@ -1,12 +1,10 @@
 #include <iostream>
 #include <string.h>
 
-using namespace std;
-
-class MyException : public std::exception  //пример
+class MyException : public std::exception  //ГЇГ°ГЁГ¬ГҐГ°
 {
 public:
-	MyException(const char* str, int data_state) : exception(str)
+	MyException(const char* str, int data_state) : std::exception(str)
 	{
 		this->data_state = data_state;
 	}
@@ -16,8 +14,8 @@ public:
 	};
 
 private:
-	int data_state;//номер ошибки ,чтоб выкидывать 
-	//и далее можно будет в документации задекларивать ошибки 
+	int data_state;//Г­Г®Г¬ГҐГ° Г®ГёГЁГЎГЄГЁ ,Г·ГІГ®ГЎ ГўГ»ГЄГЁГ¤Г»ГўГ ГІГј 
+	//ГЁ Г¤Г Г«ГҐГҐ Г¬Г®Г¦Г­Г® ГЎГіГ¤ГҐГІ Гў Г¤Г®ГЄГіГ¬ГҐГ­ГІГ Г¶ГЁГЁ Г§Г Г¤ГҐГЄГ«Г Г°ГЁГўГ ГІГј Г®ГёГЁГЎГЄГЁ 
 };
 
 
@@ -25,13 +23,13 @@ void Foo(int value)
 {
 	if (value < 0)
 	{
-		throw MyException("меньше нуля", value);
+		throw MyException("Г¬ГҐГ­ГјГёГҐ Г­ГіГ«Гї", value);
 	}
 }
 
 int main()
 {
-	setlocale(LC_ALL, "Russian"); // перевод на русский 
+	setlocale(LC_ALL, "Russian"); // ГЇГҐГ°ГҐГўГ®Г¤ Г­Г  Г°ГіГ±Г±ГЄГЁГ© 
 
 	try
 	{
@@ -39,7 +37,7 @@ int main()
 	}
 	catch (MyException& ex)
 	{
-		cout << ex.what() << endl;
-		cout << ex.Get_data_state() << endl;
+		std::cout << ex.what() << std::endl;
+		std::cout << ex.Get_data_state() << std::endl;
 	}
 }

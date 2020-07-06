@@ -1,0 +1,43 @@
+
+Реализовать шаблонный класс MyArray ( шаблонная коллекция ) 
+Поля :
+private T * arr;
+private int count;
+
+public:
++ operator[] 	      - осуществляет получение элемента массива с помощью [] WORK+
++ at(int index)         - осуществляет получение элемента массива с проверкой индекса WORK+
++Add(T element)        - добавлет элемент Т в коллекцию WORK+
++Remove(T element)     - удаляет элемент Т из коллекции WORK+
++RemoveAt(int index)   - удаляет элемент по индексу WORK+
++AddRange(T * elements)- добавляет коллекцию элементов WORK+
++T front               - возвращает первый элемент из коллекции и удаляет его WORK+
++T back                - возвращает последний элемент из коллекции и удаляет его WORK+
++bool empty            - возвращает bool ( пустая коллекция или нет )WORK+
++int size              - возвращает кол-во элементов в коллекции WORK+
++fill(int number)      - устанавливает значение всех элементов в коллекции заданым параметром WORK+
++fill(int min,int max) - устанавливает значение всех элементов в коллекции рандомными значение от min до max WORK+
++int * Find(T element)   - возвращает массив из элементов равных параметру element WORK+
++int FindFirst(T element) - возвращает индекс первого найденого элемента WORK+
++int RFindFirst(T element)- возвращает индекс первого найденого элемента с конца WORK+
+
++operator <<              - перегрузить оператор вывода коллекции WORK+
++operator = (MyArray)     - оператор = для присвоения коллекции WORK+
++~MyArray                 - деструктор  WORK+
+Также предусмотреть ряд различных конструкторов 
++MyArray WORK+
++MyArray(int count) WORK+
++MyArray(T * elements)
++MyArray(MyArray & arr)
+
+(MyArray)  - перегрузить операторы сравнения с другой коллекцией
++operator== WORK+
++operator!=WORK+
++operator<   WORK+
++operator<=  WORK+
++operator> WORK+
++operator>= WORK+
+//не работает
+осталось пересмотреть код и оттестировать
+
+ПОСМОТРЕТЬ НА ОПЕРАТОР ВЫВОДА НЕ РАБОТЕТ
